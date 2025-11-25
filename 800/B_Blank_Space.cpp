@@ -16,10 +16,20 @@ int main(){
             cin>>a[i];
         }
 
+        int max0=0;
+        int len=0;
+
         for(int i=0; i<n; i++){
-            cout<<n+1-a[i]<<" ";
+            if(a[i]==0){
+                len++;
+                max0=max(len, max0);
+            }else{
+                
+                len=0;
+            }
         }
-        cout<<endl;
+
+        cout<<max0<<endl;
     }
 
     return 0;
