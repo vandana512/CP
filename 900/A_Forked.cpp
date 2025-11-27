@@ -15,9 +15,12 @@ int main(){
         cin>>xk>>yk;
         cin>>xq>>yq;
 
+        //we have made this to find out every permutation of the x axis, like ek 0,0 position ke 8 configuration pe hoskta hai ye, to wo kind of permutation nikalega ki (xk+a, yk+b) ek pair then (xk+a, yk-b), (xk-a, yk+b) ese
+
         long long dx[8] = {a, a, -a, -a, b, b, -b, -b};
         long long dy[8] = {b, -b, b, -b, a, -a, a, -a};
 
+        //set to for O(1) lookup and removing duplicates
         set<pair<long long,long long>> K, Q;
         for (int i = 0; i < 8; ++i) {
             K.insert({xk + dx[i], yk + dy[i]});
@@ -25,6 +28,7 @@ int main(){
         }
 
         int ans = 0;
+        //then we check intersection of K and Q set 
         for (auto &pos : K) if (Q.count(pos)) ++ans;
         
         cout<<ans<<endl;
