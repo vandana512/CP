@@ -29,7 +29,7 @@ int main(){
         long long ans1=n/p;
         long long ans2=n-ans1;
 
-        cout<<ans1<<" "<<ans2<<endl;
+        cout<<ans1 << " " <<ans2 <<endl;
     }
 
     return 0;
