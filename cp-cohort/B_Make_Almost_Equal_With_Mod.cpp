@@ -9,31 +9,26 @@ int main() {
     cin >> t;
     
     while (t--) {
-        int n;
-        cin >> n;
-        vector<long long> a(n);
-        
-        for (int i = 0; i < n; i++) {
-            cin >> a[i];
+        long long int n;
+        cin>>n;
+        vector<long long int> a(n);
+        for(int i=0;i<n;i++){
+            cin>>a[i];
         }
-        
-        sort(a.begin(), a.end());
-        
-        // Find the minimum bit position where adjacent differences differ
-        // We look at differences between consecutive elements
-        long long minDiff = LLONG_MAX;
-        for (int i = 1; i < n; i++) {
-            minDiff = min(minDiff, a[i] - a[i-1]);
+
+        for(int j=0;j<58;j++){
+            set<long long> s;
+
+            for(int i=0;i<n;i++){
+                s.insert((a[i]%(1LL<<j)));
+            }
+
+            if(s.size()==2){
+                cout<<(1LL<<j)<<endl;
+                break;
+            }
         }
-        
-        // Find the highest bit set in minDiff
-        // The answer is 2^(highest_bit + 1)
-        long long k = 1;
-        while (k <= minDiff) {
-            k *= 2;
-        }
-        
-        cout << k << "\n";
+
     }
     
     return 0;
