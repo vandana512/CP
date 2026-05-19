@@ -6,7 +6,13 @@ const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
 void solve() {
+    int grid[5][5];
 
+    for(auto &row : grid) {
+        for(auto &x : row) {
+            cin >> x;
+        }
+    }
 }
 
 int main() {
