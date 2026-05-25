@@ -16,13 +16,6 @@ bool isPalindrome(string s){
     return true;
 }
 
-bool nonDecreasing(const string &p) {
-    for (int i = 1; i < p.size(); i++)
-        if (p[i] < p[i-1]) return false;
-    return true;
-}
-
-
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -37,21 +30,24 @@ int main(){
 
         if(isPalindrome(s)){
             cout<<0<<endl;
+            cout<<" "<<endl;
             continue;
         }
 
-        bool found = false;
-        for (int i = 0; i < n; i++) {
-            string x = s.substr(0, i) + s.substr(i + 1);
-            if (isPalindrome(x)) {
-                cout << 1 << "\n";
-                cout << i + 1 << "\n";
-                found = true;
-                break;
-            }
+        //SUBSEQUENCE MEANS IN ANY SERIES IT MUST NOT BE CONTIGOUS
+
+        vector<int> a;
+
+        for(int i=0; i<n; i++){
+            if(s[i]=='0') a.push_back(i+1);
         }
 
-        if (!found) cout << "-1\n";
+        cout<<a.size()<<endl;
+        for(auto &it: a){
+            cout<<it<<" ";
+        }
+
+        cout<<endl;
         
 
     }
