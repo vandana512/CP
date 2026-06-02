@@ -3,13 +3,15 @@ using namespace std;
 #define ll long long
 
 void solve() {
-    ll n;
-    cin >> n;
+    ll n, a, b;
+    cin >>n>>a>>b;
 
-    vector<ll> a(n);
+    ll group=n/3;
+    ll left=n%3;
 
-    for(int i=0; i<n; i++) cin>>a[i];
-    
+    ll ans= group* min(3*a, b) + min(left *a, b);
+
+    cout<<ans<<endl;
 }
 
 int main() {

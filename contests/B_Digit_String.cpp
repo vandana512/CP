@@ -4,22 +4,19 @@ using namespace std;
 
 void solve() {
     ll n;
-    cin >> n;
+    cin >>n;
 
-    vector<ll> a(n);
-
-    for(int i=0; i<n; i++) cin>>a[i];
     
+
 }
 
-int main() {
+int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t;
-    cin >> t;
-
-    while (t--) {
+    long long t=1;
+    cin>>t;
+    while(t--){
         solve();
     }
 
